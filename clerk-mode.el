@@ -39,19 +39,12 @@
     (cider-interactive-eval
      (concat "(nextjournal.clerk/show! \"" filename "\")"))))
 
-
-
-;;(define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)
-
 (define-minor-mode clerk-mode
   "Minor mode for presenting files in Clerk."
   :lighter " clerk"
   :keymap (let ((keymap (make-sparse-keymap)))
             (define-key keymap (kbd "M-RET") 'clerk-show)
             keymap))
-
-;(define-key clerk-mode-map "M-<return>" 'clerk-show)
-;(define-key clerk-mode-map "M-RET" 'clerk-show)
 
 (provide 'clerk-mode)
 
